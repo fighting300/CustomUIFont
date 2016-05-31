@@ -74,141 +74,41 @@
 }
 
 
-+ (UIFont *)mediumHuge {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:24.0f weight:UIFontWeightMedium];
-    }
-    else {
-        font = [UIFont systemFontOfSize:24.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_9{
+    return [self fontOfSize:26.0f andType:QWFontTypeThin];
 }
-
-+ (UIFont *)mediumLarge {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:20.0f weight:UIFontWeightMedium];
-    }
-    else {
-        font = [UIFont systemFontOfSize:20.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_8{
+    return [self fontOfSize:24.0f andType:QWFontTypeThin];
 }
-
-+ (UIFont *)regularLarge {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:18.0f weight:UIFontWeightRegular];
-    }
-    else {
-        font = [UIFont systemFontOfSize:18.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_7{
+    return [self fontOfSize:22.0f andType:QWFontTypeThin];
 }
-
-+ (UIFont *)regularNormal {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:16.0f weight:UIFontWeightRegular];
-    }
-    else {
-        font = [UIFont systemFontOfSize:16.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_6{
+    return [self fontOfSize:20.0f andType:QWFontTypeThin];
 }
-
-+ (UIFont *)lightLarge {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightLight];
-    }
-    else {
-        font = [UIFont systemFontOfSize:14.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_5{
+    return [self fontOfSize:18.0f andType:QWFontTypeThin];
 }
-
-+ (UIFont *)lightNormal {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:12.0f weight:UIFontWeightLight];
-    }
-    else {
-        font = [UIFont systemFontOfSize:12.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_4{
+    return [self fontOfSize:16.0f andType:QWFontTypeThin];
 }
-
-+ (UIFont *)lightSmall {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:10.0f weight:UIFontWeightLight];
-    }
-    else {
-        font = [UIFont systemFontOfSize:10.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_3{
+    return [self fontOfSize:14.0f andType:QWFontTypeThin];
 }
-
-+ (UIFont *)thinHuge {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:16.0f weight:UIFontWeightThin];
-    }
-    else {
-        font = [UIFont systemFontOfSize:16.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_2{
+    return [self fontOfSize:12.0f andType:QWFontTypeThin];
 }
-
-+ (UIFont *)thinNormal {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:12.0f weight:UIFontWeightThin];
-    }
-    else {
-        font = [UIFont systemFontOfSize:12.0f];
-    }
-    
-    return font;
-}
-
-+ (UIFont *)thinSmall {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:10.0f weight:UIFontWeightThin];
-    }
-    else {
-        font = [UIFont systemFontOfSize:10.0f];
-    }
-    
-    return font;
-}
-
-+ (UIFont *)thinTiny {
-    UIFont *font = nil;
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
-        font = [UIFont systemFontOfSize:8.0f weight:UIFontWeightThin];
-    }
-    else {
-        font = [UIFont systemFontOfSize:8.0f];
-    }
-    
-    return font;
++ (UIFont *)Thin_1{
+    return [self fontOfSize:10.0f andType:QWFontTypeThin];
 }
 
 
 + (UIFont *)fontOfSize:(CGFloat)size andType:(QWFontType)fontType{
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]
+    //TODO: 以下代码有问题
+    BOOL isFont = [UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)];
+    NSLog(@"isFont =%d",isFont);
+    
+    if ([UIFont instanceMethodForSelector:@selector(systemFontOfSize:weight:)]
         && fontType != QWFontTypeMediumNone) {
         CGFloat fontWeight = 0.0;
         switch (fontType) {
@@ -240,7 +140,8 @@
 }
 
 + (UIFont *)fontOfSize:(CGFloat)size andWeight:(CGFloat)weight andType:(QWFontType)fontType{
-    if ([UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)]) {
+    
+    if ([UIFont instanceMethodForSelector:@selector(systemFontOfSize:weight:)]) {
         return [UIFont systemFontOfSize:size weight:weight];
     }else{
         if (fontType == QWFontTypeMedium) {

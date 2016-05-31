@@ -125,83 +125,52 @@ typedef NS_ENUM(NSUInteger ,QWFontType){
 + (UIFont *)Light_1;
 
 
-
-/** 替换中
- *  一号中黑 Medium 48px 24dp <br/>
- *  <br/>
- *  Emphasize_1
- */
-+ (UIFont *)mediumHuge;
-
 /**
- *  二号中黑 Medium 40px 20dp <br/>
- *  <br/>
- *  Emphasize_2
+ *  细体9号
+ *  52px  Thin
  */
-+ (UIFont *)mediumLarge;
-
++ (UIFont *)Thin_9;
 /**
- *  三号常规 Regular 36px 18dp <br/>
- *  <br/>
- *  Title_1
+ *  细体8号
+ *  48px  Thin
  */
-+ (UIFont *)regularLarge;
-
++ (UIFont *)Thin_8;
 /**
- *  四号常规 Regular 32px 16dp <br/>
- *  <br/>
- *  Title_2
+ *  细体7号
+ *  44px  Thin
  */
-+ (UIFont *)regularNormal;
-
++ (UIFont *)Thin_7;
 /**
- *  五号细体 Light 28px 14dp <br/>
- *  <br/>
- *  Title_3
+ *  细体6号
+ *  40px  Thin
  */
-+ (UIFont *)lightLarge;
-
++ (UIFont *)Thin_6;
 /**
- *  六号细体 Light 24px 12dp <br/>
- *  <br/>
- *  Content_1
+ *  细体5号
+ *  36px  Thin
  */
-+ (UIFont *)lightNormal;
-
++ (UIFont *)Thin_5;
 /**
- *  七号细体 Light 20px 10dp <br/>
- *  <br/>
- *  Content_2
+ *  细体4号
+ *  32px  Thin
  */
-+ (UIFont *)lightSmall;
-
++ (UIFont *)Thin_4;
 /**
- *  扩展纤细体 Light 32px 10dp <br/>
- *  <br/>
- *  Extend_1
+ *  细体3号
+ *  28px  Thin
  */
-+ (UIFont *)thinHuge;
-
++ (UIFont *)Thin_3;
 /**
- *  扩展纤细体 Light 24px 10dp <br/>
- *  <br/>
- *  Extend_2
+ *  细体2号
+ *  24px  Thin
  */
-+ (UIFont *)thinNormal;
-
++ (UIFont *)Thin_2;
 /**
- *  扩展纤细体 Light 20px 10dp <br/>
- *  <br/>
- *  Extend_3
+ *  细体1号
+ *  20px  Thin
  */
-+ (UIFont *)thinSmall;
++ (UIFont *)Thin_1;
 
-/**
- *  扩展纤细体 Light 16px 10dp <br/>
- *  <br/>
- *  Extend_4
- */
-+ (UIFont *)thinTiny;
 
 /**
  *  设置字体 <br/>
