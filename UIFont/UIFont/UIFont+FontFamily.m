@@ -104,11 +104,11 @@
 
 
 + (UIFont *)fontOfSize:(CGFloat)size andType:(QWFontType)fontType{
-    //TODO: 以下代码有问题
+    // 判断实例方法
     BOOL isFont = [UIFont instancesRespondToSelector:@selector(systemFontOfSize:weight:)];
     NSLog(@"isFont =%d",isFont);
     
-    if ([UIFont instanceMethodForSelector:@selector(systemFontOfSize:weight:)]
+    if ([UIFont respondsToSelector:@selector(systemFontOfSize:weight:)]
         && fontType != QWFontTypeMediumNone) {
         CGFloat fontWeight = 0.0;
         switch (fontType) {
@@ -141,7 +141,7 @@
 
 + (UIFont *)fontOfSize:(CGFloat)size andWeight:(CGFloat)weight andType:(QWFontType)fontType{
     
-    if ([UIFont instanceMethodForSelector:@selector(systemFontOfSize:weight:)]) {
+    if ([UIFont respondsToSelector:@selector(systemFontOfSize:weight:)]) {
         return [UIFont systemFontOfSize:size weight:weight];
     }else{
         if (fontType == QWFontTypeMedium) {
